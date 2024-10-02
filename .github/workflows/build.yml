@@ -41,7 +41,7 @@ jobs:
       - name: Build and Test
         run: ./gradlew build test
 
-      - name: publish to maven local
+      - name: Publish to maven local
         run: ./gradlew publishToMavenLocal
 
       - name: Upload artifacts

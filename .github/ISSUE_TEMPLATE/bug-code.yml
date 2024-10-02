@@ -1,0 +1,53 @@
+name: Bug Report on develop
+description: Report a **FIRST SEEN** bug
+labels: ["type/bug"]
+
+body:
+  - type: checkboxes
+    attributes:
+      label: Basic Troubleshooting
+      description: |-
+        Make sure you have checked the following first.
+        If you don't think it's applicable to your issue, you may check the box.
+      options:
+        - label: I have checked for similar issues, and my issue is not a duplicate. (Check closed issues as well)
+          required: true
+        - label: I have checked for pull requests that may already address my issue.
+          required: true
+        - label: I am using the latest version
+          required: true
+        - label: I have confirmed that my issue is reproducible with the minimum viable code
+          required: true
+
+  - type: textarea
+    attributes:
+      label: Describe the bug and how to replicate it
+      description: |
+        Video is always useful.
+        A minimally reproducible description is best.
+      placeholder: |
+        Step 1. Do this
+        Step 2. Then do this
+        Step 3. etc...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: reproducible it with the minimum code
+      description: |
+        A code or repository url to reproduce your issue
+        A minimally reproducible description is best.
+      placeholder: |
+        public class Main...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Version
+      description: |
+        Provide the git commit or the version
+      placeholder: A example would be commit version bc7c7d0 or version 1.0.0
+    validations:
+      required: true

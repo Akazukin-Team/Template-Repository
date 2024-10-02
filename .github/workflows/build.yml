@@ -1,4 +1,4 @@
-name: Build application and upload artifacts
+name: Build and upload artifacts
 
 
 on:

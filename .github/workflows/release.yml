@@ -2,6 +2,7 @@ name: Build application and publish artifacts
 
 
 on:
+  workflow_dispatch:
   release:
     types: [ published ]
 

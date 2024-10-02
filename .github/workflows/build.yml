@@ -2,6 +2,7 @@ name: Build application and upload artifacts
 
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'main'

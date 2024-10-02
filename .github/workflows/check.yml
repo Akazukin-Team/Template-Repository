@@ -2,6 +2,7 @@ name: Build application and test
 
 
 on:
+  workflow_dispatch:
   push:
 
 

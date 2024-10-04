@@ -88,5 +88,35 @@
     "color": "ff0000",
     "description": "破壊的変更",
     "name": "type/breaking_changes"
+  },
+  {
+    "color": "7cfc00",
+    "description": "自動CIが成功",
+    "name": "auto_ci/succeeded"
+  },
+  {
+    "color": "ff0000",
+    "description": "自動CIが失敗",
+    "name": "auto_ci/failed"
+  },
+  {
+    "color": "ffff00",
+    "description": "自動CIが進行中",
+    "name": "auto_ci/checking"
+  },
+  {
+    "color": "adff2f",
+    "description": "自動CIをスキップ",
+    "name": "auto_ci/skipped"
+  },
+  {
+    "color": "dcdcdc",
+    "description": "未確認",
+    "name": "review/unchecked"
+  },
+  {
+    "color": "32cd32",
+    "description": "確認済み",
+    "name": "review/checked"
   }
 ]

@@ -3,7 +3,6 @@ name: CodeQL
 
 on:
   workflow_dispatch:
-  pull_request:
   push:
     branches:
       - main
@@ -35,6 +34,8 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
 
+
+      # Github CodeQL Scanner
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
@@ -45,3 +46,11 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
+
+
+      # Jetbrains Qodana Scanner
+      - name: 'Qodana Scan'
+        uses: JetBrains/qodana-action@v2024
+        if: ${{ secrets.QODANA_TOKEN != '' }}
+        env:
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}

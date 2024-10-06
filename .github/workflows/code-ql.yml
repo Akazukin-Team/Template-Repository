@@ -12,8 +12,7 @@ on:
 
 jobs:
   analyze:
-
-    if: !contains(github.event.pull_request.labels.*.name, 'ci/skip')
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'ci/skip') }}
 
     runs-on: ubuntu-22.04
 

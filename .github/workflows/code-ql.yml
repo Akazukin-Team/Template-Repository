@@ -4,7 +4,7 @@ name: CodeQL
 on:
   workflow_dispatch:
   pull_request:
-    types: [opened, synchronize]
+    types: [ opened, synchronize ]
   push:
     branches:
       - main
@@ -53,6 +53,6 @@ jobs:
       # Jetbrains Qodana Scanner
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@latest
-        env: 
-            QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         if: ${{ env.QODANA_TOKEN != '' }}
+        env:
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}

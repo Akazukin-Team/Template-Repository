@@ -53,6 +53,6 @@ jobs:
       # Jetbrains Qodana Scanner
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@latest
-        if: ${{ secrets.QODANA_TOKEN != '' }}
-        env:
-          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+        env: 
+            QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+        if: ${{ env.QODANA_TOKEN != '' }}

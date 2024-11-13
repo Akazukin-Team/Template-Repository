@@ -21,3 +21,7 @@ If the PR has a redundant code, we'll reject it.
 
 If you create classes or methods, writing docs is helpful.
 -->
+
+<!--
+The title of the PR must be in English.
+-->

@@ -1,17 +1,17 @@
-name: Publish to GPR
+name: Build application and test
+
 
 on:
   workflow_dispatch:
-  release:
-    types: [ published ]
+  push:
+
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     permissions:
       contents: read
-      packages: write
 
     steps:
       - name: Checkout
@@ -35,8 +35,3 @@ jobs:
 
       - name: Build and Test
         run: ./gradlew build test
-
-      - name: Upload artifacts to GPR
-        run: ./gradlew publishMavenPublicationToGprRepository -Dorg.gradle.unsafe.configuration-cache=false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

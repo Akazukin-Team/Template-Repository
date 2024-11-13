@@ -1,0 +1,18 @@
+version: 2
+
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"
+    rebase-strategy: "disabled"
+    schedule:
+        interval: "weekly"
+    commit-message:
+      prefix: "gradle-deps:"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    rebase-strategy: "disabled"
+    schedule:
+        interval: "weekly"
+    commit-message:
+      prefix: "gh-action:"

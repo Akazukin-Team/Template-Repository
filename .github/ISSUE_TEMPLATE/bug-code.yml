@@ -10,9 +10,9 @@ body:
         Make sure you have checked the following first.
         If you don't think it's applicable to your issue, you may check the box.
       options:
-        - label: I have checked for similar issues, and my issue is not a duplicate. (Check closed issues as well)
+        - label: I have checked for no similar issues, and my issue is not a duplicate. (Check closed issues as well)
           required: true
-        - label: I have checked for pull requests that may already address my issue.
+        - label: I have checked for no pull requests that may already address my issue.
           required: true
         - label: I am using the latest version
           required: true
@@ -47,7 +47,7 @@ body:
     attributes:
       label: Version
       description: |
-        Provide the git commit or the version
-      placeholder: A example would be commit version bc7c7d0 or version 1.0.0
+        Provide the git commit-hash or the version
+      placeholder: A example would be commit-hash bc7c7d0 or version 1.0.0
     validations:
       required: true

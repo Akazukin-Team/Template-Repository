@@ -3,8 +3,46 @@
 Below is our guidance for how to report issues, propose new features, and submit contributions via Pull Requests (PRs).
 
 
+## Chapter
 
-## Getting Started
+ * [Report issues](#report-issues)
+ * [Suggest features](#suggest-features)
+ * [Developments](#developments)
+
+
+
+
+## Report issues
+
+**If the issue matches [Security Vulnerability](./SECURITY.md#definition-of-a-security-vulnerability), you follow [the Reporting a Vulnerability](./SECURITY.md#reporting-a-vulnerability).**
+
+If you find a bug, first, check there are no issue (including closed issues) that is similar or duplicate, and pull requests adressing it.
+
+Second, you create a issue and fill form as much as possible.
+These information will help us patch the issue much quicker.
+
+And then, please check the issue regularly.
+We may ask some questions to patch the issue.
+
+
+
+
+## Suggest features
+
+If you want to suggest a feature, first, check there are no features (including closed features) that is similar or duplicate, and pull requests adressing it.
+
+Second, you create a issue and fill form as much as possible.
+These information will help us make the feature much quicker and easier.
+
+And then, please check the suggestion regularly.
+We may ask some questions to make the feature.
+
+
+
+
+## Developments
+
+### Getting Started
 
 First, you will cloning the repository and checkout branch to your development branch.
 
@@ -33,7 +71,7 @@ It may take a while. Pray to God and wait.
 
 
 
-## Code Requirements
+### Code Requirements
 
  * Without any exceptions thrown
  * Optimized code
@@ -46,8 +84,9 @@ It may take a while. Pray to God and wait.
 
 
 
-## Comment of Commit
+### Comment of Commit
 
  * Be as concise as possible
  * Write what you changed from what to what
  * Write in English only
+ 

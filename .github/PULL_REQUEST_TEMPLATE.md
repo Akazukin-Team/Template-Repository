@@ -7,6 +7,7 @@
 - New or updated content
 - Translated content
 - Changes to the docs
+- Refacts codes
 - Something else
 
 #### Description

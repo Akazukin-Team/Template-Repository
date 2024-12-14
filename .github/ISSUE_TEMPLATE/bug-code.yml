@@ -45,9 +45,20 @@ body:
 
   - type: textarea
     attributes:
+      label: Output stacktrace
+      description: |
+        Stacktrace is most needle information.
+        If you have a stacktrace, put it.
+      placeholder: |
+        Put your stacktrace...
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
       label: Version
       description: |
         Provide the git commit-hash or the version
-      placeholder: A example would be commit-hash bc7c7d0 or version 1.0.0
+      placeholder: A example would be commit-hash 845f8d5 or 845f8d528ff13efb7902563bd3e73bb08c8284ca, or version 1.0.0
     validations:
       required: true

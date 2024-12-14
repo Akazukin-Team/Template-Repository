@@ -2,8 +2,11 @@ name: Build application and test
 
 
 on:
-  workflow_dispatch:
   push:
+
+
+env:
+  JDK_VERSION: 17
 
 
 jobs:
@@ -24,14 +27,14 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
 
-      - name: Setup JDK 8
+      - name: Setup JDK ${{ env.JDK_VERSION }}
         uses: actions/setup-java@v4
         with:
-          java-version: 8
+          java-version: ${{ env.JDK_VERSION }}
           distribution: 'adopt'
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Build and Test
-        run: ./gradlew build test
+      - name: Test
+        run: ./gradlew test

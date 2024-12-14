@@ -1,6 +1,7 @@
 <!-- Thank you for opening a PR! We really appreciate you taking the time to help out 🙌 -->
 
 #### What kind of changes does this PR include?
+
 <!-- Delete any that don’t apply -->
 
 - Minor content fixes (broken links, typos, exception, etc...)

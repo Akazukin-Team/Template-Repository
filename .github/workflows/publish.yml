@@ -1,9 +1,12 @@
 name: Publish to GPR
 
 on:
-  workflow_dispatch:
   release:
     types: [ published ]
+
+
+env:
+  JDK_VERSION: 17
 
 jobs:
   build:
@@ -24,10 +27,10 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
 
-      - name: Setup JDK 8
+      - name: Setup JDK ${{ env.JDK_VERSION }}
         uses: actions/setup-java@v4
         with:
-          java-version: 8
+          java-version: ${{ env.JDK_VERSION }}
           distribution: 'adopt'
 
       - name: Make gradlew executable

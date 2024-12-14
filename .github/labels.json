@@ -88,5 +88,10 @@
     "color": "ff0000",
     "description": "破壊的変更",
     "name": "type/breaking_changes"
+  },
+  {
+    "color": "0099ff",
+    "description": "DependaBot",
+    "name": "bot/dependabot"
   }
 ]

@@ -1,0 +1,14 @@
+plugins {
+    id 'buildlogic.java-common-conventions'
+}
+
+dependencies {
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+
+    compileOnly libs.jetbrains.annotations
+    annotationProcessor libs.jetbrains.annotations
+
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly libs.junit.platform
+}

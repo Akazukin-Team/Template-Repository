@@ -1,0 +1,40 @@
+import java.nio.charset.StandardCharsets
+
+plugins {
+    id 'java-library'
+    id "com.github.ben-manes.versions"
+}
+
+int javaVersion = 8
+
+configurations {
+    include
+    implementation.extendsFrom(include)
+    compileOnly.extendsFrom(pluginImpl)
+}
+
+dependencies {
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly libs.junit.platform
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.encoding = StandardCharsets.UTF_8
+
+    it.options.compilerArgs << '-Xlint'
+    it.options.compilerArgs << '-Xmaxerrs' << '10000'
+    it.options.compilerArgs << '-Xmaxwarns' << '10000'
+    it.options.compilerArgs << '-Xdiags:verbose'
+
+    it.sourceCompatibility = it.targetCompatibility = javaVersion
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(javaVersion)
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+tasks.withType(AbstractCopyTask).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

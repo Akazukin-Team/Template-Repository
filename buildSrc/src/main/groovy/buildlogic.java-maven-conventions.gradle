@@ -1,0 +1,51 @@
+plugins {
+    id 'maven-publish'
+    id 'java-library'
+}
+
+configurations {
+    include
+    implementation.extendsFrom(include)
+}
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+Properties props = new Properties()
+try (FileInputStream fis = new FileInputStream(new File(parent.rootDir.getPath(), "application.properties"))) {
+    props.load(fis)
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "gpr"
+            url = uri("https://maven.pkg.github.com/" + System.getenv("GITHUB_REPOSITORY"))
+            credentials {
+                username = System.getenv("GITHUB_REPOSITORY_OWNER")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+
+    publications {
+        maven(MavenPublication) {
+            groupId = project.group
+            artifactId = project.artifact
+            version = project.version
+
+            pom {
+                name = props.getProperty("name")
+                description = props.getProperty("description")
+                url = props.getProperty("url")
+
+                organization {
+                    name = props.getProperty("vendor")
+                    url = props.getProperty("vendor-url")
+                }
+            }
+        }
+    }
+}

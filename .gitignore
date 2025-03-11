@@ -1,0 +1,16 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+buildSrc/.gradle
+
+# Ignore Gradle build output directory
+build
+*/build
+*/src/main/generated
+*/bin
+
+# Ignore IDE settubgs directory
+.idea
+
+run
+
+*.log

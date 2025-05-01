@@ -1,4 +1,12 @@
 plugins {
-    id 'buildlogic.java-common-conventions'
+    id 'buildlogic.java-manifest-conventions'
     id 'application'
+}
+
+application {
+    File runningDir = new File(parent.projectDir.getPath(), 'run/')
+    runningDir.mkdirs()
+    tasks.run.workingDir = runningDir
+    mainClassName = jar.manifest.attributes.get("Main-Class")
+    applicationDefaultJvmArgs += ["-Xms512M", "-Xmx2G", "-server", "-XX:+DisableExplicitGC", "-XX:+UseCompressedOops", "-XX:+OptimizeStringConcat", "-XX:-UseGCOverheadLimit", "-XX:+AlwaysPreTouch", "-XX:+UnlockExperimentalVMOptions", "-XX:+UnlockDiagnosticVMOptions", "-XX:+CrashOnOutOfMemoryError", "-XX:+HeapDumpOnOutOfMemoryError"]
 }

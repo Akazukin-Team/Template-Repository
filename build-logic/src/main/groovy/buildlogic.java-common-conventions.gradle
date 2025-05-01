@@ -1,24 +1,41 @@
 plugins {
-    id 'java'
+    id 'java-library'
+    id 'com.github.ben-manes.versions'
 }
 
 repositories {
+    maven {
+        name = 'Jitpack'
+        url = 'https://jitpack.io/'
+    }
     mavenCentral()
 }
 
-dependencies {
+
+def javaVersion = properties.getOrDefault("java_version", 8) as int
+tasks.withType(JavaCompile).configureEach {
+    configure(options) {
+        encoding = 'UTF-8'
+        compilerArgs << '-Xlint'
+        compilerArgs << '-Xmaxerrs' << '10000'
+        compilerArgs << '-Xmaxwarns' << '10000'
+        compilerArgs << '-Xdiags:verbose'
+    }
+    it.sourceCompatibility = it.targetCompatibility = javaVersion
 }
 
-testing {
-    suites {
-        test {
-            useJUnitJupiter('5.10.3')
-        }
+java.toolchain.languageVersion.set(javaVersion)
+
+
+tasks.withType(Javadoc).configureEach {
+    configure(options) {
+        encoding = docEncoding = charSet = 'UTF-8'
     }
 }
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(8)
-    }
+
+tasks.jar.dependsOn(processResources)
+
+tasks.withType(AbstractCopyTask).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

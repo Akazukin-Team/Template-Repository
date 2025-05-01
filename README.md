@@ -7,6 +7,21 @@
 
 ---
 
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+- [Contributing](#contributing)
+    - [Introduction](#introduction)
+    - [Build Instructions](#build-instructions)
+- [Continuous Integration](#continuous-integration)
+- [License](#license)
+- [Contact](#contact)
+
+---
+
 ## Features
 
 -
@@ -65,7 +80,17 @@ Ensure you have the following installed:
 
 ---
 
-## Build Instructions
+## Contributing
+
+### Introduction
+
+Carefully read the [Contribution Guide](./.github/CONTRIBUTING.md) and follow the coding conventions and other
+guidelines when making your changes.
+
+
+---
+
+### Build Instructions
 
 Follow these steps to build the project from source:
 
@@ -93,14 +118,6 @@ Follow these steps to build the project from source:
 
 This project uses GitHub Actions for Continuous Integration (CI). Every push to the main branch triggers the build and
 test workflow.
-
-
----
-
-## Contributing
-
-Carefully read the [Contribution Guide](./.github/CONTRIBUTING.md) and follow the coding conventions and other
-guidelines when making your changes.
 
 
 ---

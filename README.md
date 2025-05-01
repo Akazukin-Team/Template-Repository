@@ -99,19 +99,8 @@ test workflow.
 
 ## Contributing
 
-Contributions are welcome! To get started:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix.
-3. Commit your changes and push the branch:
-   ```shell
-   git checkout -b feature-new-functionality
-   git commit -m "Fix the OutOfMemory when called Test$throwException"
-   git push origin fix/oom
-   ```
-4. Open a pull request.
-
-Make sure to abide by the project's coding conventions and include tests for any new functionality.
+Carefully read the [Contribution Guide](./.github/CONTRIBUTING.md) and follow the coding conventions and other
+guidelines when making your changes.
 
 
 ---

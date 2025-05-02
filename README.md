@@ -107,7 +107,7 @@ Follow these steps to build the project from source:
 
    The compiled JAR file will be located in the `build/libs/` (Gradle) directory.
 
-3. Publish to Maven in Local using `maven-publish`:
+3. Publish to local maven using `maven-publish`:
    ```shell
    ./gradlew publishToMavenLocal
    ```

@@ -12,7 +12,7 @@ repositories {
 }
 
 
-def javaVersion = properties.getOrDefault("java_version", 8) as int
+def javaVersion = properties.getOrDefault('java_version', 8) as int
 tasks.withType(JavaCompile).configureEach {
     configure(options) {
         encoding = 'UTF-8'

@@ -55,7 +55,7 @@ Ensure you have the following installed:
     ```xml
     <dependency>
       <groupId>org.akazukin</groupId>
-      <artifactId>snowflake</artifactId>
+      <artifactId><PLACEHOLDER_ARTIFACT></artifactId>
       <version>VERSION</version>
     </dependency>
     ```

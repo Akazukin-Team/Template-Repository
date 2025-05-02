@@ -14,8 +14,7 @@
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
 - [Contributing](#contributing)
-    - [Introduction](#introduction)
-    - [Build Instructions](#build-instructions)
+- [Build Instructions](#build-instructions)
 - [Continuous Integration](#continuous-integration)
 - [License](#license)
 - [Contact](#contact)
@@ -82,15 +81,13 @@ Ensure you have the following installed:
 
 ## Contributing
 
-### Introduction
-
 Carefully read the [Contribution Guide](./.github/CONTRIBUTING.md) and follow the coding conventions and other
 guidelines when making your changes.
 
 
 ---
 
-### Build Instructions
+## Build Instructions
 
 Follow these steps to build the project from source:
 

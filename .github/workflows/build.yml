@@ -43,8 +43,8 @@ jobs:
       - name: Build and Test
         run: ./gradlew build test
 
-      - name: Publish to Nexus
-        run: ./gradlew publishSnapshotPublicationToTeamSnapshotsRepository -Dorg.gradle.unsafe.configuration-cache=false
-        env:
-          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
-          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifact
+          path: publish/build/libs/

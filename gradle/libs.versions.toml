@@ -8,7 +8,7 @@ jetbrains-annotation = "26.0.2"
 junit-jupiter = "5.11.3"
 
 # JMH Libraries
-jmh-lib = "0.9"
+jmh-lib = "1.37"
 
 #Gradle Plugin
 gradle-versions = "0.51.0"

@@ -41,46 +41,40 @@ Make sure you have the following installed:
 #### Using Maven
 
 1. Add the following repository to the `<repositories>` block in your `pom.xml` file:
-
-```xml
-
-<repository>
-    <id>akazukin-repo</id>
-    <name>Akazukin Repository</name>
-    <url>https://maven.akazukin.org/refer/maven-public/</url>
-</repository>
-```
+    ```xml
+    <repository>
+        <id>akazukin-repo</id>
+        <name>Akazukin Repository</name>
+        <url>https://maven.akazukin.org/refer/maven-public/</url>
+    </repository>
+    ```
 
 2. Add the dependency to the `<dependencies>` block in your `pom.xml` file:
-
-```xml
-
-<dependency>
-    <groupId>org.akazukin</groupId>
-    <artifactId><PLACEHOLDER_ARTIFACT></artifactId>
-    <version>VERSION</version>
-</dependency>
-```
+    ```xml
+    <dependency>
+        <groupId>org.akazukin</groupId>
+        <artifactId><PLACEHOLDER_ARTIFACT></artifactId>
+        <version>VERSION</version>
+    </dependency>
+    ```
 
 ---
 
 #### Using Gradle
 
 1. Add the repository to the `repositories` block in your `build.gradle` file:
-
-```groovy
-maven {
-    id = 'akazukin-repo'
-    name = 'Akazukin Repository'
-    url = 'https://maven.akazukin.org/refer/maven-public/'
-}
-```
+    ```groovy
+    maven {
+        id = 'akazukin-repo'
+        name = 'Akazukin Repository'
+        url = 'https://maven.akazukin.org/refer/maven-public/'
+    }
+    ```
 
 2. Add the dependency to the `dependencies` block in your `build.gradle` file:
-
-```groovy
-implementation 'org.akazukin:<PLACEHOLDER_ARTIFACT>:<VERSION>'
-```
+    ```groovy
+    implementation 'org.akazukin:<PLACEHOLDER_ARTIFACT>:<VERSION>'
+    ```
 
 ---
 
@@ -96,25 +90,22 @@ guidelines when making your changes.
 To build the project from source, follow these steps:
 
 1. Clone the repository:
-
-```shell
-git clone https://github.com/Akazukin-Team/<PLACEHOLDER_REPO>.git
-cd <PLACEHOLDER_REPO>
-```
+    ```shell
+    git clone https://github.com/Akazukin-Team/<PLACEHOLDER_REPO>.git
+    cd <PLACEHOLDER_REPO>
+    ```
 
 2. Build the project with Gradle:
+    ```shell
+    ./gradlew build
+    ```
+   The compiled JAR file will be located in the `build/libs/` directory.
 
-```shell
-./gradlew build
-```
-
-    The compiled JAR file will be located in the `build/libs/` directory.
 
 3. Publish to the local Maven repository using the `maven-publish` plugin:
-
-```shell
-./gradlew publishToMavenLocal
-```
+    ```shell
+    ./gradlew publishToMavenLocal
+    ```
 
 ---
 

@@ -13,6 +13,7 @@ repositories {
 
 
 def javaVersion = properties.getOrDefault('java_version', 8) as int
+
 tasks.withType(JavaCompile).configureEach {
     configure(options) {
         encoding = 'UTF-8'
@@ -24,7 +25,7 @@ tasks.withType(JavaCompile).configureEach {
     it.sourceCompatibility = it.targetCompatibility = javaVersion
 }
 
-java.toolchain.languageVersion.set(javaVersion)
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(javaVersion))
 
 
 tasks.withType(Javadoc).configureEach {
@@ -34,7 +35,7 @@ tasks.withType(Javadoc).configureEach {
 }
 
 
-tasks.jar.dependsOn(processResources)
+tasks.compileJava.dependsOn(processResources)
 
 tasks.withType(AbstractCopyTask).configureEach {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE

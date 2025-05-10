@@ -43,6 +43,7 @@ Make sure you have the following installed:
 1. Add the following repository to the `<repositories>` block in your `pom.xml` file:
 
 ```xml
+
 <repository>
     <id>akazukin-repo</id>
     <name>Akazukin Repository</name>
@@ -53,9 +54,12 @@ Make sure you have the following installed:
 2. Add the dependency to the `<dependencies>` block in your `pom.xml` file:
 
 ```xml
+
 <dependency>
     <groupId>org.akazukin</groupId>
-    <artifactId><PLACEHOLDER_ARTIFACT></artifactId>
+    <artifactId>
+        <PLACEHOLDER_ARTIFACT>
+    </artifactId>
     <version>VERSION</version>
 </dependency>
 ```
@@ -97,7 +101,7 @@ To build the project from source, follow these steps:
 
 ```shell
 git clone https://github.com/Akazukin-Team/<PLACEHOLDER_REPO>.git
-    cd <PLACEHOLDER_REPO>
+cd <PLACEHOLDER_REPO>
 ```
 
 2. Build the project with Gradle:

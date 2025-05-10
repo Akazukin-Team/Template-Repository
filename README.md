@@ -2,8 +2,7 @@
 
 [![Build Status](https://github.com/Akazukin-Team/<PLACEHOLDER_REPO>/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/Akazukin-Team/<PLACEHOLDER_REPO>/actions/workflows/build.yml?query=branch:main)
 
-<PLACEHOLDER_DESCRIBE>
-
+<PLACEHOLDER_DESCRIPTION>
 
 ---
 
@@ -23,7 +22,7 @@
 
 ## Features
 
--
+- <PLACEHOLDER_FEATURES>
 
 ---
 
@@ -31,7 +30,7 @@
 
 ### Prerequisites
 
-Ensure you have the following installed:
+Make sure you have the following installed:
 
 - **Java Development Kit (JDK)** version 8 or later.
 
@@ -41,95 +40,98 @@ Ensure you have the following installed:
 
 #### Using Maven
 
-1. Add the repository to `<repositories>` block of `pom.xml`
-    ```xml
-    <repository>
-        <id>akazukin-repo</id>
-        <name>akazukin repo</name>
-        <url>https://maven.akazukin.org/refer/maven-public/</url>
-    </repository>
-    ```
+1. Add the following repository to the `<repositories>` block in your `pom.xml` file:
 
-2. Add the dependency to `<dependencies>` block of `pom.xml`
-    ```xml
-    <dependency>
-      <groupId>org.akazukin</groupId>
-      <artifactId><PLACEHOLDER_ARTIFACT></artifactId>
-      <version>VERSION</version>
-    </dependency>
-    ```
+```xml
+<repository>
+    <id>akazukin-repo</id>
+    <name>Akazukin Repository</name>
+    <url>https://maven.akazukin.org/refer/maven-public/</url>
+</repository>
+```
+
+2. Add the dependency to the `<dependencies>` block in your `pom.xml` file:
+
+```xml
+<dependency>
+    <groupId>org.akazukin</groupId>
+    <artifactId><PLACEHOLDER_ARTIFACT></artifactId>
+    <version>VERSION</version>
+</dependency>
+```
 
 ---
 
 #### Using Gradle
 
-1. Add the repository to `repositories` block of `build.gradle`
-    ```groovy
-    maven {
-        id = 'akazukin-repo<'
-        name = 'akazukin repo'
-        url = 'https://maven.akazukin.org/refer/maven-public/'
-    }
-    ```
+1. Add the repository to the `repositories` block in your `build.gradle` file:
 
-2. Add the dependency to `dependencies` block of `build.gradle`
-    ```groovy
-    implementation 'org.akazukin:<PLACEHOLDER_ARTIFACT>:<VERSION>'
-    ```
+```groovy
+maven {
+    id = 'akazukin-repo'
+    name = 'Akazukin Repository'
+    url = 'https://maven.akazukin.org/refer/maven-public/'
+}
+```
+
+2. Add the dependency to the `dependencies` block in your `build.gradle` file:
+
+```groovy
+implementation 'org.akazukin:<PLACEHOLDER_ARTIFACT>:<VERSION>'
+```
 
 ---
 
 ## Contributing
 
-Carefully read the [Contribution Guide](./.github/CONTRIBUTING.md) and follow the coding conventions and other
+Please read the [Contribution Guide](./.github/CONTRIBUTING.md) carefully and follow the coding conventions and
 guidelines when making your changes.
-
 
 ---
 
 ## Build Instructions
 
-Follow these steps to build the project from source:
+To build the project from source, follow these steps:
 
 1. Clone the repository:
-   ```shell
-   git clone https://github.com/Akazukin-Team/<PLACEHOLDER_REPO>.git
-   cd <PLACEHOLDER_REPO>
-   ```
 
-2. Build using Gradle:
-   ```shell
-   ./gradlew build
-   ```
+```shell
+git clone https://github.com/Akazukin-Team/<PLACEHOLDER_REPO>.git
+    cd <PLACEHOLDER_REPO>
+```
 
-   The compiled JAR file will be located in the `build/libs/` (Gradle) directory.
+2. Build the project with Gradle:
 
-3. Publish to local maven using `maven-publish`:
-   ```shell
-   ./gradlew publishToMavenLocal
-   ```
+```shell
+./gradlew build
+```
+
+    The compiled JAR file will be located in the `build/libs/` directory.
+
+3. Publish to the local Maven repository using the `maven-publish` plugin:
+
+```shell
+./gradlew publishToMavenLocal
+```
 
 ---
 
 ## Continuous Integration
 
-This project uses GitHub Actions for Continuous Integration (CI). Every push to the main branch triggers the build and
-test workflow.
-
+This project uses GitHub Actions for Continuous Integration (CI).
+Every push to the `main` branch automatically triggers the build and test workflow.
 
 ---
 
 ## License
 
-This project is licensed under the [License](LICENSE).
-
+This project is licensed under the terms described in the [License](LICENSE) file.
 
 ---
 
 ## Contact
 
-Should you wish to contact us directly, please refer to the contact methods provided in
-the [Support](./.github/SUPPORT.md).
-
+If you need further assistance or wish to contact us directly,
+please refer to the [Support](./.github/SUPPORT.md) page.
 
 ---

@@ -2,11 +2,6 @@ plugins {
     id 'buildlogic.java-common-conventions'
     id 'java'
 }
-/*
-dependencies {
-    testImplementation libs.junit.jupiter
-    testRuntimeOnly libs.junit.platform
-}*/
 
 testing {
     suites {

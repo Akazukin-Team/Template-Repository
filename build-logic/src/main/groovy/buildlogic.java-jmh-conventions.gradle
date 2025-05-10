@@ -32,7 +32,7 @@ jmh {
     warmupForks = 0
     warmupIterations = 1
 
-    jvmArgs = ['-Xmx32G', '-server', '-XX:CompileThreshold=1', '-XX:MaxInlineSize=1', '-XX:+UseStringDeduplication']
+    jvmArgs = ['-Xmx4G', '-server', '-XX:CompileThreshold=1', '-XX:MaxInlineSize=1', '-XX:+UseStringDeduplication']
     //-XX:+TieredCompilation
 
     jmhVersion = '1.37'

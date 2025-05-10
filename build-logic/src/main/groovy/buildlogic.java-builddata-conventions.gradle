@@ -1,0 +1,36 @@
+import java.time.ZoneOffset
+import java.time.ZonedDateTime
+
+plugins {
+    id 'java-library'
+}
+
+Properties props = new Properties()
+try (FileInputStream fis = new FileInputStream(new File(parent.rootDir.getPath(), 'application.properties'))) {
+    props.load(fis)
+}
+
+String date = ZonedDateTime.now(ZoneOffset.UTC).getDateTimeString()
+
+String commit = 'git rev-parse --verify --short HEAD'.execute().text.trim()
+String commitHash = 'git rev-parse --verify HEAD'.execute().text.trim()
+
+processResources {
+    inputs.property 'version', props.getProperty("version")
+    inputs.property 'vendor', props.getProperty("vendor")
+    inputs.property 'commit', commit
+    inputs.property 'commitHash', commitHash
+    inputs.property 'buildDate', date
+
+    filesMatching('build-data.properties') {
+        expand([
+                version   : props.getProperty("version"),
+                vendor    : props.getProperty("vendor"),
+                commit    : commit,
+                commitHash: commitHash,
+                buildDate : date
+        ])
+    }
+}
+
+tasks.compileJava.dependsOn(processResources)

@@ -5,13 +5,13 @@ slf4j = "2.1.0-alpha1"
 jetbrains-annotation = "26.0.2"
 
 #Test Modules
-junit-jupiter = "5.12.2"
+junit-jupiter = "5.13.0-M3"
 
 # JMH Libraries
 jmh-lib = "1.37"
 
 #Gradle Plugin
-gradle-versions = "0.51.0"
+gradle-versions = "0.52.0"
 jmh-pl = "0.7.3"
 
 

@@ -57,9 +57,7 @@ Make sure you have the following installed:
 
 <dependency>
     <groupId>org.akazukin</groupId>
-    <artifactId>
-        <PLACEHOLDER_ARTIFACT>
-    </artifactId>
+    <artifactId><PLACEHOLDER_ARTIFACT></artifactId>
     <version>VERSION</version>
 </dependency>
 ```

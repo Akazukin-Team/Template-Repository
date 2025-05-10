@@ -65,7 +65,6 @@ Make sure you have the following installed:
 1. Add the repository to the `repositories` block in your `build.gradle` file:
     ```groovy
     maven {
-        id = 'akazukin-repo'
         name = 'Akazukin Repository'
         url = 'https://maven.akazukin.org/refer/maven-public/'
     }

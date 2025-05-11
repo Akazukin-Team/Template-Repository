@@ -1,4 +1,4 @@
-name: Publish to GPR
+name: Publish snapshot to Repository
 
 on:
   release:
@@ -40,7 +40,7 @@ jobs:
         run: ./gradlew build test
 
       - name: Publish to Nexus
-        run: ./gradlew publishReleasePublicationToTeamReleasesRepository -Dorg.gradle.unsafe.configuration-cache=false
+        run: ./gradlew publishSnapshotPublicationToSnapshotsRepository -Dorg.gradle.unsafe.configuration-cache=false
         env:
-          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
-          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+          REPOSITORY_USERNAME: ${{ secrets.REPOSITORY_USERNAME }}
+          REPOSITORY_PASSWORD: ${{ secrets.REPOSITORY_PASSWORD }}

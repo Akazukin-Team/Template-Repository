@@ -16,19 +16,19 @@ try (FileInputStream fis = new FileInputStream(new File(parent.rootDir.getPath()
 publishing {
     repositories {
         maven {
-            name = 'TeamReleases'
+            name = 'Releases'
             url = uri('https://maven.akazukin.org/refer/maven-releases/')
             credentials {
-                username = project.hasProperty('sonatype.username') ? project['sonatype.username'] : System.getenv('SONATYPE_USERNAME')
-                password = project.hasProperty('sonatype.password') ? project['sonatype.password'] : System.getenv('SONATYPE_PASSWORD')
+                username = project.hasProperty('repository.username') ? project['repository.username'] : System.getenv('REPOSITORY_USERNAME')
+                password = project.hasProperty('repository.password') ? project['repository.password'] : System.getenv('REPOSITORY_PASSWORD')
             }
         }
         maven {
-            name = 'TeamSnapshots'
+            name = 'Snapshots'
             url = uri('https://maven.akazukin.org/refer/maven-snapshots/')
             credentials {
-                username = project.hasProperty('sonatype.username') ? project['sonatype.username'] : System.getenv('SONATYPE_USERNAME')
-                password = project.hasProperty('sonatype.password') ? project['sonatype.password'] : System.getenv('SONATYPE_PASSWORD')
+                username = project.hasProperty('repository.username') ? project['repository.username'] : System.getenv('REPOSITORY_USERNAME')
+                password = project.hasProperty('repository.password') ? project['repository.password'] : System.getenv('REPOSITORY_PASSWORD')
             }
         }
         mavenLocal()

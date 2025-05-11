@@ -1,19 +1,13 @@
-name: Build and upload artifacts
-
+name: Publish snapshot to Repository
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - 'main'
-      - 'master'
-      - 'develop'
-      - 'dev'
+  release:
+    types: [ published ]
 
 
 env:
   JDK_VERSION: 8
-
 
 jobs:
   build:
@@ -21,6 +15,7 @@ jobs:
 
     permissions:
       contents: read
+      packages: write
 
     steps:
       - name: Checkout
@@ -45,8 +40,8 @@ jobs:
       - name: Build and Test
         run: ./gradlew build test
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: artifact
-          path: publish/build/libs/
+      - name: Publish to Nexus
+        run: ./gradlew publishSnapshotPublicationToSnapshotsRepository -Dorg.gradle.unsafe.configuration-cache=false
+        env:
+          REPOSITORY_USERNAME: ${{ secrets.REPOSITORY_USERNAME }}
+          REPOSITORY_PASSWORD: ${{ secrets.REPOSITORY_PASSWORD }}

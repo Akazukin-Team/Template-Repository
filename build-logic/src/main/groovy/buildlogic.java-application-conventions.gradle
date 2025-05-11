@@ -11,5 +11,7 @@ tasks.withType(JavaExec).configureEach {
 
     workingDir = runningDir
     mainClassName = jar.manifest.attributes.get('Main-Class')
-    applicationDefaultJvmArgs += ['-Xms512M', '-Xmx2G', '-server', '-XX:CompileThreshold=500', '-XX:+DisableExplicitGC', '-XX:+UseCompressedOops', '-XX:+AggressiveOpts', '-XX:+UseStringDeduplication', '-XX:+OptimizeStringConcat', '-XX:-UseGCOverheadLimit', '-XX:+AlwaysPreTouch', '-XX:+UnlockExperimentalVMOptions', '-XX:+UnlockDiagnosticVMOptions', '-XX:+CrashOnOutOfMemoryError', '-XX:+HeapDumpOnOutOfMemoryError']
+    applicationDefaultJvmArgs += ['-Xms512M', '-Xmx2G', '-server ', '-XX:+UnlockExperimentalVMOptions ', '-XX:+UnlockDiagnosticVMOptions ', '-XX:+UseParallelGC ', '-XX:+DisableExplicitGC ', '-XX:-UseGCOverheadLimit ', '-XX:CompileThreshold=500 ', '-XX:+UseCompressedOops ', '-XX:+AlwaysPreTouch ', '-XX:+UseStringDeduplication ', '-XX:+OptimizeStringConcat ', '-XX:+CrashOnOutOfMemoryError ', '-XX:+HeapDumpOnOutOfMemoryError']
+    // If you use Java 12 or later, You should add the args for jvm options
+    //  '-XX:+AggressiveOpts'
 }

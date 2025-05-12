@@ -4,6 +4,7 @@
 
 <PLACEHOLDER_DESCRIPTION>
 
+
 ---
 
 ## Table of Contents
@@ -82,6 +83,7 @@ Make sure you have the following installed:
 Please read the [Contribution Guide](./.github/CONTRIBUTING.md) carefully and follow the coding conventions and
 guidelines when making your changes.
 
+
 ---
 
 ## Build Instructions
@@ -113,11 +115,13 @@ To build the project from source, follow these steps:
 This project uses GitHub Actions for Continuous Integration (CI).
 Every push to the `main` branch automatically triggers the build and test workflow.
 
+
 ---
 
 ## License
 
 This project is licensed under the terms described in the [License](LICENSE) file.
+
 
 ---
 
@@ -125,5 +129,6 @@ This project is licensed under the terms described in the [License](LICENSE) fil
 
 If you need further assistance or wish to contact us directly,
 please refer to the [Support](./.github/SUPPORT.md) page.
+
 
 ---

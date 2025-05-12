@@ -16,12 +16,6 @@ String commit = 'git rev-parse --verify --short HEAD'.execute().text.trim()
 String commitHash = 'git rev-parse --verify HEAD'.execute().text.trim()
 
 processResources {
-    inputs.property 'version', props.getProperty('version')
-    inputs.property 'vendor', props.getProperty('vendor')
-    inputs.property 'commit', commit
-    inputs.property 'commitHash', commitHash
-    inputs.property 'buildDate', date
-
     filesMatching('build-data.properties') {
         expand([
                 version   : props.getProperty('version'),

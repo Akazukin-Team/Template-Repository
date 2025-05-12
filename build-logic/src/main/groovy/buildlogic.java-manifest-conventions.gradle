@@ -12,15 +12,16 @@ try (FileInputStream fis = new FileInputStream(new File(parent.rootDir.getPath()
 
 String date = ZonedDateTime.now(ZoneOffset.UTC).getDateTimeString()
 
-jar {
+tasks.withType(org.gradle.jvm.tasks.Jar).configureEach {
     manifest {
-        attributes 'Implementation-Title': props.getProperty('name'),
-                'Created-By': "${JavaVersion.current()} (${props.getProperty('vendor')})",
-                'Signature-Version': props.getProperty('version'),
-                'Implementation-Date': date
+        attributes 'Build-Jdk-Spec': JavaVersion.current(),
+            'Built-By': props.getProperty('vendor'),
+            'Specification-Title': props.getProperty('name'),
+            'Specification-Version': props.getProperty('version'),
+            'Specification-Vendor': props.getProperty('vendor'),
+            'Implementation-Title': props.getProperty('name'),
+            'Implementation-Version': props.getProperty('version'),
+            'Implementation-Vendor': props.getProperty('vendor'),
+            'Implementation-Build-Date': date
     }
-}
-
-tasks.withType(Jar).configureEach {
-    manifest = jar.manifest
 }

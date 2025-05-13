@@ -14,7 +14,8 @@ String date = ZonedDateTime.now(ZoneOffset.UTC).getDateTimeString()
 
 tasks.withType(org.gradle.jvm.tasks.Jar).configureEach {
     manifest {
-        attributes 'Build-Jdk-Spec': JavaVersion.current(),
+        attributes 'Main-Class': props.getProperty("mainClass"),
+            'Build-Jdk-Spec': JavaVersion.current(),
             'Built-By': props.getProperty('vendor'),
             'Specification-Title': props.getProperty('name'),
             'Specification-Version': props.getProperty('version'),

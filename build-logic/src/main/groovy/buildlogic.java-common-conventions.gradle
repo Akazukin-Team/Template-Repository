@@ -30,6 +30,7 @@ java.toolchain.languageVersion.set(JavaLanguageVersion.of(javaVersion))
 
 tasks.withType(Javadoc).configureEach {
     configure(options) {
+        locale = 'en_US'
         encoding = docEncoding = charSet = 'UTF-8'
     }
 }

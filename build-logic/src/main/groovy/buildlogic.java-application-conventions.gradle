@@ -1,6 +1,10 @@
 plugins {
-    id 'buildlogic.java-manifest-conventions'
     id 'application'
+}
+
+Properties props = new Properties()
+try (FileInputStream fis = new FileInputStream(new File(parent.rootDir.getPath(), 'application.properties'))) {
+    props.load(fis)
 }
 
 tasks.withType(JavaExec).configureEach {
@@ -10,8 +14,8 @@ tasks.withType(JavaExec).configureEach {
     }
 
     workingDir = runningDir
-    mainClassName = jar.manifest.attributes.get('Main-Class')
-    applicationDefaultJvmArgs += ['-Xms512M', '-Xmx2G', '-server ', '-XX:+UnlockExperimentalVMOptions ', '-XX:+UnlockDiagnosticVMOptions ', '-XX:+UseParallelGC ', '-XX:+DisableExplicitGC ', '-XX:-UseGCOverheadLimit ', '-XX:CompileThreshold=500 ', '-XX:+UseCompressedOops ', '-XX:+AlwaysPreTouch ', '-XX:+UseStringDeduplication ', '-XX:+OptimizeStringConcat ', '-XX:+CrashOnOutOfMemoryError ', '-XX:+HeapDumpOnOutOfMemoryError']
+    mainClass.set(props.getProperty("mainClass"))
+    applicationDefaultJvmArgs += ['-Xms512M', '-Xmx2G', '-server', '-XX:+UnlockExperimentalVMOptions', '-XX:+UnlockDiagnosticVMOptions', '-XX:+UseParallelGC', '-XX:+DisableExplicitGC', '-XX:-UseGCOverheadLimit', '-XX:CompileThreshold=500', '-XX:+UseCompressedOops', '-XX:+AlwaysPreTouch', '-XX:+UseStringDeduplication', '-XX:+OptimizeStringConcat', '-XX:+CrashOnOutOfMemoryError', '-XX:+HeapDumpOnOutOfMemoryError']
     // If you use Java 12 or later, You should add the args for jvm options
     //  '-XX:+AggressiveOpts'
 }

@@ -40,6 +40,12 @@ Please check one of the boxes below to indicate if this PR introduces a breaking
 
 ---
 
+## Additional Notes
+
+- <!-- If there's anything else you want to add, mention it here. -->
+
+---
+
 ## Related Issue or PR
 
 - <!-- Add an issue or PR number if this PR is related to one. -->

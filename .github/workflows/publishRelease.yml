@@ -10,7 +10,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     permissions:
       contents: read
@@ -40,7 +40,7 @@ jobs:
         run: ./gradlew build test
 
       - name: Publish to Nexus
-        run: ./gradlew publishReleasePublicationToReleasesRepository -Dorg.gradle.unsafe.configuration-cache=false
+        run: ./gradlew publishReleasePublicationToReleasesRepository publishSnapshotPublicationToSnapshotsRepository -Dorg.gradle.unsafe.configuration-cache=false
         env:
-          REPOSITORY_USERNAME: ${{ secrets.REPOSITORY_USERNAME }}
-          REPOSITORY_PASSWORD: ${{ secrets.REPOSITORY_PASSWORD }}
+          REPOSITORY_USERNAME: ${{ secrets.NEXUS_PUBLIC_LIBRARIES_USERNAME }}
+          REPOSITORY_PASSWORD: ${{ secrets.NEXUS_PUBLIC_LIBRARIES_PASSWORD }}

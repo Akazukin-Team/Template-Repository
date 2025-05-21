@@ -2,8 +2,6 @@ name: Publish snapshot to Repository
 
 on:
   workflow_dispatch:
-  release:
-    types: [ published ]
 
 
 env:
@@ -11,7 +9,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     permissions:
       contents: read
@@ -43,5 +41,5 @@ jobs:
       - name: Publish to Nexus
         run: ./gradlew publishSnapshotPublicationToSnapshotsRepository -Dorg.gradle.unsafe.configuration-cache=false
         env:
-          REPOSITORY_USERNAME: ${{ secrets.REPOSITORY_USERNAME }}
-          REPOSITORY_PASSWORD: ${{ secrets.REPOSITORY_PASSWORD }}
+          REPOSITORY_USERNAME: ${{ secrets.NEXUS_PUBLIC_LIBRARIES_USERNAME }}
+          REPOSITORY_PASSWORD: ${{ secrets.NEXUS_PUBLIC_LIBRARIES_PASSWORD }}

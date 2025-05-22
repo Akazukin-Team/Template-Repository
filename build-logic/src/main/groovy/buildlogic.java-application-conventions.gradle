@@ -7,15 +7,33 @@ try (FileInputStream fis = new FileInputStream(new File(parent.rootDir.getPath()
     props.load(fis)
 }
 
-tasks.withType(JavaExec).configureEach {
-    File runningDir = new File(parent.projectDir.getPath(), 'run/')
-    doFirst {
-        runningDir.mkdirs()
-    }
 
-    workingDir = runningDir
-    mainClass.set(props.getProperty("mainClass"))
-    applicationDefaultJvmArgs += ['-Xms512M', '-Xmx2G', '-server', '-XX:+UnlockExperimentalVMOptions', '-XX:+UnlockDiagnosticVMOptions', '-XX:+UseParallelGC', '-XX:+DisableExplicitGC', '-XX:-UseGCOverheadLimit', '-XX:CompileThreshold=500', '-XX:+UseCompressedOops', '-XX:+AlwaysPreTouch', '-XX:+UseStringDeduplication', '-XX:+OptimizeStringConcat', '-XX:+CrashOnOutOfMemoryError', '-XX:+HeapDumpOnOutOfMemoryError']
-    // If you use Java 12 or later, You should add the args for jvm options
-    //  '-XX:+AggressiveOpts'
+File testDir = new File(parent.projectDir.getPath(), 'run/')
+
+tasks.withType(JavaExec).configureEach {
+    doFirst {
+        testDir.mkdirs()
+    }
+    workingDir = testDir
+
+    standardInput = System.in
+    mainClass.set(props.getProperty('mainClass'))
+
+    applicationDefaultJvmArgs = ['-Xms512M', '-Xmx2G',
+                                 '-server',
+                                 '-XX:+UnlockExperimentalVMOptions', '-XX:+UnlockDiagnosticVMOptions',
+                                 '-XX:+UseParallelGC', '-XX:+DisableExplicitGC', '-XX:-UseGCOverheadLimit',
+                                 '-XX:+TieredCompilation', '-XX:CompileThreshold=500', '-XX:MaxInlineSize=64',
+                                 '-XX:+UseCompressedOops', '-XX:+UseStringDeduplication', '-XX:+OptimizeStringConcat',
+                                 '-XX:+AlwaysPreTouch',
+                                 '-XX:+CrashOnOutOfMemoryError', '-XX:+HeapDumpOnOutOfMemoryError']
+    if (!JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_1_8)) {
+        applicationDefaultJvmArgs += '-XX:+TieredCompilation'
+    }
+    if (!JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_1_9)) {
+        applicationDefaultJvmArgs += '-XX:+UseFastAccessorMethods'
+    }
+    if (!JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_13)) {
+        applicationDefaultJvmArgs += '-XX:+AggressiveOpts'
+    }
 }

@@ -23,17 +23,32 @@ jmh {
     failOnError = true
     forceGC = true
     resultFormat = 'CSV'
-    threads = 1
+    threads = 4
     jmhTimeout = '1m'
-    timeUnit = 'ms'
+    timeUnit = 'ns'
 
     warmup = '10s'
     warmupBatchSize = 10
     warmupForks = 0
     warmupIterations = 1
 
-    jvmArgs = ['-Xmx4G', '-server', '-XX:CompileThreshold=1', '-XX:MaxInlineSize=1', '-XX:+UseStringDeduplication']
-    //-XX:+TieredCompilation
+    jvmArgs = ['-Xms512M', '-Xmx2G',
+               '-server',
+               '-XX:+UnlockExperimentalVMOptions', '-XX:+UnlockDiagnosticVMOptions',
+               '-XX:+UseParallelGC', '-XX:+DisableExplicitGC', '-XX:-UseGCOverheadLimit',
+               '-XX:+TieredCompilation', '-XX:CompileThreshold=1', '-XX:MaxInlineSize=64',
+               '-XX:+UseCompressedOops', '-XX:+UseStringDeduplication', '-XX:+OptimizeStringConcat',
+               '-XX:+AlwaysPreTouch',
+               '-XX:+CrashOnOutOfMemoryError', '-XX:+HeapDumpOnOutOfMemoryError']
+    if (!JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_1_8)) {
+        jvmArgs += '-XX:+TieredCompilation'
+    }
+    if (!JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_1_9)) {
+        jvmArgs += '-XX:+UseFastAccessorMethods'
+    }
+    if (!JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_13)) {
+        jvmArgs += '-XX:+AggressiveOpts'
+    }
 
     jmhVersion = '1.37'
     zip64 = true

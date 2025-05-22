@@ -23,6 +23,7 @@ publishing {
                 password = project.hasProperty('repository.password') ? project['repository.password'] : System.getenv('REPOSITORY_PASSWORD')
             }
         }
+
         maven {
             name = 'Snapshots'
             url = uri('https://maven.akazukin.org/refer/[PLACEHOLDER_MAVEN]-snapshots/')
@@ -31,6 +32,7 @@ publishing {
                 password = project.hasProperty('repository.password') ? project['repository.password'] : System.getenv('REPOSITORY_PASSWORD')
             }
         }
+
         mavenLocal()
     }
 

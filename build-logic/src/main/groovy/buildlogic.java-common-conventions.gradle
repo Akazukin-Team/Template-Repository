@@ -7,16 +7,28 @@ repositories {
     maven {
         name = 'Jitpack'
         url = 'https://jitpack.io/'
+
+        content {
+            includeGroupByRegex 'com\\.github\\.[a-zA-Z0-9_-]+'
+        }
     }
+
     maven {
         name = 'Akazukin Repository - Public Library'
         url = 'https://maven.akazukin.org/refer/maven-public-libraries/'
+
+        content {
+            includeGroup 'org.akazukin'
+        }
     }
+
     mavenCentral()
 }
 
 
-def javaVersion = properties.getOrDefault('java_version', 8) as int
+def javaVersion = properties.getOrDefault('java.version', 8) as int
+def javaCompatSource = properties.getOrDefault('java.compatibility.source', javaVersion) as int
+def javaCompatTarget = properties.getOrDefault('java.compatibility.target', javaCompatSource) as int
 
 tasks.withType(JavaCompile).configureEach {
     configure(options) {
@@ -26,7 +38,8 @@ tasks.withType(JavaCompile).configureEach {
         compilerArgs << '-Xmaxwarns' << '10000'
         compilerArgs << '-Xdiags:verbose'
     }
-    it.sourceCompatibility = it.targetCompatibility = javaVersion
+    it.sourceCompatibility = javaCompatSource
+    it.targetCompatibility = javaCompatTarget
 }
 
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(javaVersion))

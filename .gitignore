@@ -9,8 +9,21 @@ build
 */bin
 
 # Ignore IDE settubgs directory
-.idea
+.idea/
+*.iml
+*.ipr
+*.iws
 
+.profileconfig.json
+static-analysis.datadog.yml
+
+# Ignore Eclipse settings directory
+# Idk
+
+
+# Ignore the test directory
 run
 
+# Ignore Log files
 *.log
+*.hprof

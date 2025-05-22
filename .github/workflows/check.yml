@@ -9,7 +9,7 @@ on:
 
 
 env:
-  JDK_VERSION: 8
+  JDK_VERSION: 21
 
 
 jobs:

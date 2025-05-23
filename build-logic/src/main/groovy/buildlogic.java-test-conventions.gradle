@@ -1,6 +1,7 @@
 plugins {
-    id 'buildlogic.java-common-conventions'
     id 'java'
+
+    id 'buildlogic.java-common-conventions'
 }
 
 testing {

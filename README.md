@@ -46,7 +46,7 @@ Make sure you have the following installed:
     <repository>
         <id>akazukin-repo</id>
         <name>Akazukin Repository</name>
-        <url>https://maven.akazukin.org/refer/maven-[PLACEHOLDER_MAVEN]/</url>
+        <url>https://maven.akazukin.org/refer/maven-<PLACEHOLDER_MAVEN>/</url>
     </repository>
     ```
 
@@ -67,7 +67,7 @@ Make sure you have the following installed:
     ```groovy
     maven {
         name = 'Akazukin Repository'
-        url = 'https://maven.akazukin.org/refer/maven-[PLACEHOLDER_MAVEN]/'
+        url = 'https://maven.akazukin.org/refer/maven-<PLACEHOLDER_MAVEN>/'
     }
     ```
 

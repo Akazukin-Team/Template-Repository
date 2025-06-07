@@ -17,7 +17,7 @@ publishing {
     repositories {
         maven {
             name = 'Releases'
-            url = uri('https://maven.akazukin.org/refer/[PLACEHOLDER_MAVEN]-releases/')
+            url = uri('https://maven.akazukin.org/refer/maven-<PLACEHOLDER_MAVEN>-releases/')
             credentials {
                 username = project.hasProperty('repository.username') ? project['repository.username'] : System.getenv('REPOSITORY_USERNAME')
                 password = project.hasProperty('repository.password') ? project['repository.password'] : System.getenv('REPOSITORY_PASSWORD')
@@ -26,7 +26,7 @@ publishing {
 
         maven {
             name = 'Snapshots'
-            url = uri('https://maven.akazukin.org/refer/[PLACEHOLDER_MAVEN]-snapshots/')
+            url = uri('https://maven.akazukin.org/refer/maven-<PLACEHOLDER_MAVEN>-snapshots/')
             credentials {
                 username = project.hasProperty('repository.username') ? project['repository.username'] : System.getenv('REPOSITORY_USERNAME')
                 password = project.hasProperty('repository.password') ? project['repository.password'] : System.getenv('REPOSITORY_PASSWORD')

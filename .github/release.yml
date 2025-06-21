@@ -16,4 +16,4 @@ changelog:
         - type/document
     - title: 💣 Breaking Changes
       labels:
-        - type/breaking_changes
+        - type/breaking changes

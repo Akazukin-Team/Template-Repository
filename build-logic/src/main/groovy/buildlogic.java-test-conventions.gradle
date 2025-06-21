@@ -1,13 +1,35 @@
 plugins {
-    id 'java'
-
     id 'buildlogic.java-common-conventions'
+
+    id 'java'
+    id 'jvm-test-suite'
 }
 
 testing {
     suites {
         test {
-            useJUnitJupiter('5.13.0-M3')
+            useJUnitJupiter()
+        }
+
+        unitTest(JvmTestSuite) {
+            dependencies {
+                implementation project()
+            }
+        }
+
+        integrationTest(JvmTestSuite) {
+            dependencies {
+                implementation project()
+            }
         }
     }
+}
+
+tasks.named('check') {
+    dependsOn(testing.suites.unitTest)
+    dependsOn(testing.suites.integrationTest)
+}
+
+tasks.named('test') {
+    enabled = false
 }

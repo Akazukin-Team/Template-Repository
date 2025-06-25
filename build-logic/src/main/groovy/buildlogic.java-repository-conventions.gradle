@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    maven {
+        name = 'Jitpack'
+        url = 'https://jitpack.io/'
+
+        content {
+            includeGroupByRegex 'com\\.github\\.[a-zA-Z0-9_-]+'
+        }
+    }
+
+    maven {
+        name = 'Akazukin Repository - Public Library'
+        url = 'https://maven.akazukin.org/refer/maven-public-libraries/'
+
+        content {
+            includeGroup 'org.akazukin'
+        }
+    }
+
+    mavenCentral()
+}

@@ -2,7 +2,9 @@ import java.time.ZoneOffset
 import java.time.ZonedDateTime
 
 plugins {
-    id 'java-library'
+    id 'buildlogic.java-toolchain-conventions'
+
+    id 'java'
 }
 
 Properties props = new Properties()
@@ -23,6 +25,7 @@ tasks.withType(org.gradle.jvm.tasks.Jar).configureEach {
                 'Implementation-Title': props.getProperty('name'),
                 'Implementation-Version': props.getProperty('version'),
                 'Implementation-Vendor': props.getProperty('vendor'),
-                'Implementation-Build-Date': date
+                'Implementation-Build-Date': date,
+                'Multi-Release': true
     }
 }

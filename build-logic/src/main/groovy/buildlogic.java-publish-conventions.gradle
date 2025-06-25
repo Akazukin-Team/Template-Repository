@@ -5,6 +5,7 @@ plugins {
     id 'buildlogic.java-library-classpath-conventions'
     id 'buildlogic.java-manifest-conventions'
     id 'buildlogic.java-maven-conventions'
+    id 'buildlogic.java-repository-conventions'
     id 'buildlogic.java-builddata-conventions'
 }
 

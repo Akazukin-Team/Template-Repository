@@ -7,10 +7,6 @@ plugins {
 
 testing {
     suites {
-        test {
-            useJUnitJupiter()
-        }
-
         unitTest(JvmTestSuite) {
             dependencies {
                 implementation project()
@@ -23,6 +19,10 @@ testing {
             }
         }
     }
+}
+
+tasks.withType(Test).configureEach {
+    it.workingDir = new File(projectDir, "run/test/${it.name}")
 }
 
 tasks.named('check') {

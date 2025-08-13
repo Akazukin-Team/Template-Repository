@@ -1,0 +1,32 @@
+plugins {
+    id 'buildlogic.java-module-conventions'
+    id 'org.domaframework.doma.compile'
+    id 'org.domaframework.doma.codegen'
+}
+
+dependencies {
+    compileOnly libs.doma.core
+    annotationProcessor libs.doma.processor
+}
+
+import org.seasar.doma.gradle.codegen.desc.LanguageType
+
+domaCodeGen {
+    dev {
+        versionColumnNamePattern = 'VERSION_NO'
+        languageType = LanguageType.JAVA
+        entity {
+            versionColumnNamePattern = 'VERSION_NO'
+            overwrite = true
+            useListener = false
+            useMappedSuperclass = false
+            originalStatesPropertyName = 'original'
+        }
+        dao {
+            overwrite = true
+        }
+        sql {
+            overwrite = true
+        }
+    }
+}

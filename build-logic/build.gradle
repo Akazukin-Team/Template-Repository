@@ -9,4 +9,7 @@ repositories {
 dependencies {
     implementation libs.gradle.versions
     implementation libs.jmh.pl
+    implementation libs.doma.compile
+    implementation libs.doma.codegen
+    implementation libs.graalvm
 }

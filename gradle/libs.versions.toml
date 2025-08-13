@@ -3,6 +3,7 @@
 lombok = "1.18.38"
 slf4j = "2.1.0-alpha1"
 jetbrains-annotation = "26.0.2"
+doma = "3.11.0"
 
 # JMH Libraries
 jmh-lib = "1.37"
@@ -10,6 +11,8 @@ jmh-lib = "1.37"
 #Gradle Plugin
 gradle-versions = "0.52.0"
 jmh-pl = "0.7.3"
+doma-plugin = "3.0.0"
+graalvm = "0.11.0"
 
 
 [libraries]
@@ -17,6 +20,10 @@ jmh-pl = "0.7.3"
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
 slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 jetbrains-annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrains-annotation" }
+
+# Database deps
+doma-core = { module = "org.seasar.doma:doma-core", version.ref = "doma" }
+doma-processor = { module = "org.seasar.doma:doma-processor", version.ref = "doma" }
 
 # JMH Libraries
 jmh-core = { module = "org.openjdk.jmh:jmh-core", version.ref = "jmh-lib" }
@@ -26,3 +33,6 @@ jmh-bytecode = { module = "org.openjdk.jmh:jmh-generator-bytecode", version.ref 
 #Gradle Plugin
 gradle-versions = { module = "com.github.ben-manes:gradle-versions-plugin", version.ref = "gradle-versions" }
 jmh-pl = { module = "me.champeau.jmh:me.champeau.jmh.gradle.plugin", version.ref = "jmh-pl" }
+doma-compile = { module = "org.domaframework.doma.compile:org.domaframework.doma.compile.gradle.plugin", version.ref = "doma-plugin" }
+doma-codegen = { module = "org.domaframework.doma.codegen:org.domaframework.doma.codegen.gradle.plugin", version.ref = "doma-plugin" }
+graalvm = { module = "org.graalvm.buildtools.native:org.graalvm.buildtools.native.gradle.plugin", version.ref = "graalvm" }

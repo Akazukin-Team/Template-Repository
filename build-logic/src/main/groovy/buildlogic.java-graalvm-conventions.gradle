@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'org.graalvm.buildtools.native'
+}
+
+Properties props = new Properties()
+try (FileInputStream fis = new FileInputStream(new File(parent.rootDir.getPath(), 'application.properties'))) {
+    props.load(fis)
+}
+
+graalvmNative {
+    binaries {
+        main {
+            debug = true
+            verbose = false
+            fallback = true
+
+            imageName = props.getProperty('archiveBaseName')
+            mainClass = props.getProperty('mainClass')
+
+            //sharedLibrary = false
+            quickBuild = true
+            richOutput = false
+            useFatJar = false
+            buildArgs.add('-O3')
+            resources.autodetect()
+/*
+            def javaVersion = properties.getOrDefault('java.version', 21) as int
+            javaLauncher.set(javaToolchains.launcherFor {
+                languageVersion.set(JavaLanguageVersion.of(javaVersion))
+                vendor.set(JvmVendorSpec.GRAAL_VM)
+            })*/
+        }
+    }
+
+    agent {
+        defaultMode = 'standard'
+        enabled = false
+
+        trackReflectionMetadata = true
+
+        metadataCopy {
+            inputTaskNames.addAll(tasks.withType(Test).findAll { it.enabled }.collect { it.name })
+            inputTaskNames.addAll(tasks.withType(JavaExec).findAll { it.enabled }.collect { it.name })
+            outputDirectories.add("META-INF/native-image/${props.getProperty("groupId")}/${props.getProperty("artifactId")}/")
+            mergeWithExisting = true
+        }
+    }
+}

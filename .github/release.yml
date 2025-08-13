@@ -11,9 +11,13 @@ changelog:
         - type/maintenance
         - type/refactor
         - type/runtime
+        - type/dependency
     - title: 📄 Improved documentation
       labels:
         - type/document
-    - title: 💣 Breaking Changes
+    - title: 💣 Breaking Changes (API)
       labels:
-        - type/breaking changes
+        - breaking/api
+    - title: 💣 Breaking Changes (Implementation)
+      labels:
+        - breaking/implementation

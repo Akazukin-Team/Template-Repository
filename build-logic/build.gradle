@@ -12,4 +12,5 @@ dependencies {
     implementation libs.doma.compile
     implementation libs.doma.codegen
     implementation libs.graalvm
+    implementation libs.runTask
 }

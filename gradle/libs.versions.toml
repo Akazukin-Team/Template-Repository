@@ -1,8 +1,10 @@
 [versions]
 #App deps
 lombok = "1.18.38"
-slf4j = "2.1.0-alpha1"
 jetbrains-annotation = "26.0.2"
+slf4j = "2.1.0-alpha1"
+
+# Database deps
 doma = "3.11.0"
 
 # JMH Libraries
@@ -13,13 +15,14 @@ gradle-versions = "0.52.0"
 jmh-pl = "0.7.3"
 doma-plugin = "3.0.0"
 graalvm = "0.11.0"
+runTask = "2.2.3"
 
 
 [libraries]
 #App deps
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
-slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 jetbrains-annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrains-annotation" }
+slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 
 # Database deps
 doma-core = { module = "org.seasar.doma:doma-core", version.ref = "doma" }
@@ -36,3 +39,4 @@ jmh-pl = { module = "me.champeau.jmh:me.champeau.jmh.gradle.plugin", version.ref
 doma-compile = { module = "org.domaframework.doma.compile:org.domaframework.doma.compile.gradle.plugin", version.ref = "doma-plugin" }
 doma-codegen = { module = "org.domaframework.doma.codegen:org.domaframework.doma.codegen.gradle.plugin", version.ref = "doma-plugin" }
 graalvm = { module = "org.graalvm.buildtools.native:org.graalvm.buildtools.native.gradle.plugin", version.ref = "graalvm" }
+runTask = { module = "xyz.jpenilla:run-task", version.ref = "runTask" }

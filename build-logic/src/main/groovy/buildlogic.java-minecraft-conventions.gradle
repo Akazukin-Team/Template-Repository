@@ -1,0 +1,23 @@
+plugins {
+    id 'buildlogic.java-minecraft-conventions'
+
+    id 'xyz.jpenilla.run-paper'
+}
+
+Properties props = new Properties()
+try (FileInputStream fis = new FileInputStream(new File(parent.rootDir.getPath(), 'application.properties'))) {
+    props.load(fis)
+}
+
+processResources {
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand([
+                name: props.getProperty('name'),
+                version: props.getProperty('version'),
+                mainClass: props.getProperty('pluginMainClass'),
+                description: props.getProperty('description')
+        ])
+    }
+}

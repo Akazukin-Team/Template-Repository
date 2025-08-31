@@ -1,12 +1,91 @@
-#
-# https://help.github.com/articles/dealing-with-line-endings/
-#
-# Linux start script should use lf
-/gradlew        text eol=lf
+# Auto detect text files and perform LF normalization
+* text=auto
 
-# These are Windows script files and should use crlf
+
+# Source files
+# JVM Lang
+*.java          text diff=java
+*.kt            text diff=kotlin
+*.groovy        text diff=java
+*.scala         text diff=java
+*.gradle        text diff=java
+*.gradle.kts    text diff=kotlin
+
+# C#
+*.cs            text diff=csharp
+*.cshtml        text diff=html
+*.csx           text diff=csharp
+*.sln           text eol=crlf
+*.csproj        text eol=crlf
+
+# JS/TS
+*.js            text
+*.ts            text
+*.jsp           text
+*.jspf          text
+*.jspx          text
+*.ts text
+*.tsx text
+
+# Website
+*.htm           text diff=html
+*.html          text diff=html
+*.css           text diff=css
+*.scss          text diff=css
+*.sass          text
+
+
+# These files are text and should be normalized (Convert crlf => lf)
+
+*.txt           text
+*.df            text
+*.properties    text
+*.tld           text
+*.tag           text
+*.tagx          text
+*.xml           text
+*.svg           text
+*.yml           text
+*.yaml          text
+*.json          text
+*.md            text
+
+
+# Scripts
+# Windows / Linux / macOS
+*.cmd           text eol=crlf
 *.bat           text eol=crlf
+*.sh            text eol=lf
 
-# Binary files should be left untouched
+# Build scripts
+mvnw            text eol=lf
+gradlew         text eol=lf
+
+
+# Binary files
+# Normal binaries
+*.class         binary
+*.dll           binary
+*.ear           binary
+*.so            binary
+*.war           binary
+*.jks           binary
+*.ico           binary
+*.wav           binary
+*.png           binary
+*.gif           binary
+
+# zip archives
+*.zip           binary
 *.jar           binary
 
+
+# GitHub
+CODEOWNERS      text eol=lf
+LICENSE         text eol=lf
+
+
+# Exclude files from exporting
+.gitattributes  export-ignore
+.gitignore      export-ignore
+.gitkeep        export-ignore

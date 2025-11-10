@@ -5,7 +5,7 @@ jetbrains-annotation = "26.0.2"
 slf4j = "2.1.0-alpha1"
 
 # Database deps
-doma = "3.11.0"
+doma = "3.11.1"
 
 # JMH Libraries
 jmh-lib = "1.37"

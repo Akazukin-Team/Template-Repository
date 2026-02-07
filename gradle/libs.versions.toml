@@ -1,11 +1,11 @@
 [versions]
 #App deps
-lombok = "1.18.38"
-jetbrains-annotation = "26.0.2"
+lombok = "1.18.42"
+jetbrains-annotation = "26.0.2-1"
 slf4j = "2.1.0-alpha1"
 
 # Database deps
-doma = "3.11.0"
+doma = "3.11.1"
 
 # JMH Libraries
 jmh-lib = "1.37"
@@ -14,7 +14,7 @@ jmh-lib = "1.37"
 gradle-versions = "0.52.0"
 jmh-pl = "0.7.3"
 doma-plugin = "3.0.0"
-graalvm = "0.11.0"
+graalvm = "0.11.2"
 runTask = "2.2.3"
 
 

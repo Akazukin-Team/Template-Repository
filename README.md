@@ -1,6 +1,6 @@
 # <PLACEHOLDER_NAME>
 
-[![Build Status](https://github.com/Akazukin-Team/<PLACEHOLDER_REPO>/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/Akazukin-Team/<PLACEHOLDER_REPO>/actions/workflows/build.yml?query=branch:main)
+[![Build Status](https://github.com/Akazukin-Team/<PLACEHOLDER_REPO>/actions/workflows/build.yml/badge.svg)](https://github.com/Akazukin-Team/<PLACEHOLDER_REPO>/actions/workflows/build.yml)
 
 <PLACEHOLDER_DESCRIPTION>
 
@@ -10,8 +10,8 @@
 
 - [Features](#features)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
 - [Contributing](#contributing)
 - [Build Instructions](#build-instructions)
 - [Continuous Integration](#continuous-integration)

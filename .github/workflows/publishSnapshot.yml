@@ -44,5 +44,5 @@ jobs:
       - name: Publish to Nexus
         run: ./gradlew publishSnapshotPublicationToSnapshotsRepository -Dorg.gradle.unsafe.configuration-cache=false
         env:
-          REPOSITORY_USERNAME: ${{ secrets.NEXUS_PUBLIC_LIBRARIES_USERNAME }}
-          REPOSITORY_PASSWORD: ${{ secrets.NEXUS_PUBLIC_LIBRARIES_PASSWORD }}
+          REPOSITORY_USERNAME: ${{ secrets.NEXUS_COMMON_PLAIN_USERNAME }}
+          REPOSITORY_PASSWORD: ${{ secrets.NEXUS_COMMON_PLAIN_PASSWORD }}

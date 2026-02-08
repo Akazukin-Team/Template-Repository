@@ -45,9 +45,9 @@ If you would like to suggest a new feature:
 
 1. Fork the repository and create a new branch for your development work.
     - If your changes are **backward compatible**,
-      open a PR targeting the main branch (commonly named `main` or`master`).
+      open a PR targeting the main development branch (commonly named `dev` or `develop`).
     - If your changes **are not backward compatible**,
-      open a PR targeting the development branch (commonly named `dev` or `develop`).
+      open a PR targeting the development branch (commonly named `dev2` or `develop2`).
 2. Keep your changes minimal and focused.
     - Large or unrelated changes in a single PR are discouraged, as they are more likely to conflict with other work.
 3. Follow the coding style and run tests before submitting.
